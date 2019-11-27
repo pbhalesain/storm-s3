@@ -17,8 +17,8 @@
  */
 package org.apache.storm.s3.output.trident;
 
-import backtype.storm.Config;
-import backtype.storm.tuple.Fields;
+import org.apache.storm.Config;
+import org.apache.storm.tuple.Fields;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
@@ -32,8 +32,8 @@ import org.apache.storm.s3.output.Uploader;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import storm.trident.tuple.TridentTuple;
-import storm.trident.tuple.TridentTupleView;
+import org.apache.storm.trident.tuple.TridentTuple;
+import org.apache.storm.trident.tuple.TridentTupleView;
 
 import java.io.File;
 import java.io.IOException;

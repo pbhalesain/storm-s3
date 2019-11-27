@@ -17,11 +17,12 @@
  */
 package org.apache.storm.s3.aggregator;
 
-import storm.trident.operation.ReducerAggregator;
-import storm.trident.tuple.TridentTuple;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.storm.trident.operation.ReducerAggregator;
+import org.apache.storm.trident.tuple.TridentTuple;
 
 public class ListAggregator implements ReducerAggregator<List> {
 

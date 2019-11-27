@@ -60,13 +60,11 @@ public class FileSizeRotationPolicy implements FileRotationPolicy {
         this.maxBytes = (long) (count * units.getByteCount());
     }
 
-    @Override
     public boolean mark(long byteCount) {
         bytesWritten += byteCount;
         return bytesWritten >= this.maxBytes;
     }
 
-    @Override
     public void reset() {
         bytesWritten = 0;
     }

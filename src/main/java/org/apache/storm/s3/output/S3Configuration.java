@@ -17,7 +17,7 @@
  */
 package org.apache.storm.s3.output;
 
-import backtype.storm.tuple.Fields;
+import org.apache.storm.tuple.Fields;
 import org.apache.storm.s3.format.DefaultFileNameFormat;
 import org.apache.storm.s3.format.DelimitedRecordFormat;
 import org.apache.storm.s3.format.FileNameFormat;

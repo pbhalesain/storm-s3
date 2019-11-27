@@ -17,11 +17,11 @@
  */
 package org.apache.storm.s3.bolt;
 
-import backtype.storm.task.OutputCollector;
-import backtype.storm.task.TopologyContext;
-import backtype.storm.topology.OutputFieldsDeclarer;
-import backtype.storm.topology.base.BaseRichBolt;
-import backtype.storm.tuple.Tuple;
+import org.apache.storm.task.OutputCollector;
+import org.apache.storm.task.TopologyContext;
+import org.apache.storm.topology.OutputFieldsDeclarer;
+import org.apache.storm.topology.base.BaseRichBolt;
+import org.apache.storm.tuple.Tuple;
 import org.apache.storm.s3.output.S3Output;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +36,6 @@ public class S3Bolt extends BaseRichBolt {
     private S3Output s3;
     private OutputCollector collector;
 
-    @Override
     public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
         try {
             this.collector = collector;
@@ -50,7 +49,6 @@ public class S3Bolt extends BaseRichBolt {
         }
     }
 
-    @Override
     public void execute(Tuple tuple) {
         try {
             s3.write(tuple);
@@ -61,7 +59,6 @@ public class S3Bolt extends BaseRichBolt {
         }
     }
 
-    @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
 
     }

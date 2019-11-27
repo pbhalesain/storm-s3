@@ -60,7 +60,7 @@ public class DefaultFileNameFormat implements FileNameFormat {
         return this;
     }
 
-    @Override
+ 
     public String getName(String identifier, long rotation, long timeStamp) {
         return this.path + this.prefix + DELIMITER + identifier + DELIMITER + rotation + DELIMITER + timeStamp + this.extension;
     }

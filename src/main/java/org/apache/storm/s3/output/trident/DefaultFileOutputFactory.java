@@ -20,17 +20,15 @@ package org.apache.storm.s3.output.trident;
 
 public class DefaultFileOutputFactory<T> implements FileOutputFactory<T> {
 
-    @Override
     public String buildBucketName(T key) {
         return key.toString();
     }
 
-    @Override
+
     public String buildPath(T key) {
         return "";
     }
 
-    @Override
     public String buildPrefix(T key) {
         return key.toString();
     }

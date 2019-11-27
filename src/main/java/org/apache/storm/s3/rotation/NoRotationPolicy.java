@@ -23,12 +23,10 @@ package org.apache.storm.s3.rotation;
  */
 public class NoRotationPolicy implements FileRotationPolicy {
 
-    @Override
     public boolean mark(long offset) {
         return false;
     }
 
-    @Override
     public void reset() {
     }
 }

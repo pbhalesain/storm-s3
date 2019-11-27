@@ -20,8 +20,10 @@ package org.apache.storm.s3;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.transfer.TransferManager;
@@ -48,10 +50,11 @@ public class S3MemBufferedOutputStreamTest {
 
     @Test
     public void testStream() throws IOException {
-        AWSCredentialsProvider provider = new ProfileCredentialsProvider("aws-testing");
+    	Regions clientRegion = Regions.EU_WEST_2;
+        AWSCredentialsProvider provider = new ProfileCredentialsProvider("default");
         ClientConfiguration config = new ClientConfiguration();
-        AmazonS3 client = new AmazonS3Client(provider.getCredentials(), config);
-
+        AmazonS3 client = AmazonS3ClientBuilder.standard().withRegion(clientRegion)
+                .build();
         String bucketName = "test-bucket-" + System.currentTimeMillis();
         client.createBucket(bucketName);
         TransferManager tx = new TransferManager(client);

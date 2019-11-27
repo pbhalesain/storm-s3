@@ -26,7 +26,6 @@ public class DefaultS3TransactionalOutputFactory<T> implements S3TransactionalOu
 
     private Uploader transferManager;
 
-    @Override
     public S3TransactionalOutput build(T key, Map conf, FileOutputFactory fileOutputFactory) {
         return new DefaultS3TransactionalOutput(key, conf, getUploader(conf), fileOutputFactory);
     }
